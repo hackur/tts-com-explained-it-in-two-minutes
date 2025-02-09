@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import BackgroundSlider from '../components/BackgroundSlider.astro';
+import ContentSection from '../components/ContentSection.astro';
+---
+
+<Layout title="Welcome to Our Company">
+  <Header />
+  
+  <!-- Hero Section -->
+  <section class="relative h-screen flex items-center justify-center">
+    <BackgroundSlider />
+    <div class="relative text-center text-white px-4">
+      <h1 class="text-5xl font-bold mb-4">Welcome to Our Company</h1>
+      <p class="text-xl mb-8">Professional Services & Solutions</p>
+      <a href="#services" class="bg-white text-primary px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+        Learn More
+      </a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <ServiceCard 
+          title="Service 1"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore."
+          icon="🔧"
+        />
+        <ServiceCard 
+          title="Service 2"
+          description="Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo."
+          icon="⚡"
+        />
+        <ServiceCard 
+          title="Service 3"
+          description="Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla."
+          icon="🛠️"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Sections -->
+  <ContentSection
+    title="Innovation & Technology"
+    description="We leverage cutting-edge technology to deliver exceptional results. Our innovative approach combines years of expertise with modern solutions, ensuring that your project receives the attention and quality it deserves. We believe in pushing boundaries and setting new standards in our industry."
+    imageUrl="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+    imageAlt="Technology Innovation"
+  />
+
+  <ContentSection
+    title="Sustainable Solutions"
+    description="Our commitment to sustainability drives everything we do. We understand the importance of creating solutions that not only meet today's needs but also preserve resources for future generations. Through careful planning and execution, we ensure that our projects have a positive impact on both our clients and the environment."
+    imageUrl="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+    imageAlt="Sustainable Solutions"
+    reversed={true}
+  />
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-8">Contact Us</h2>
+      <p class="mb-8">Ready to get started? Contact us today!</p>
+      <a href="mailto:contact@example.com" class="bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-primary-dark transition-colors">
+        Get in Touch
+      </a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>

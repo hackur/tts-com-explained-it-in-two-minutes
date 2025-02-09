@@ -1,0 +1,29 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  imageUrl: string;
+  imageAlt: string;
+  reversed?: boolean;
+}
+
+const { title, description, imageUrl, imageAlt, reversed = false } = Astro.props;
+---
+
+<section class="py-20">
+  <div class="container mx-auto px-4">
+    <div class={`flex flex-col ${reversed ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-12`}>
+      <div class="w-full md:w-1/2">
+        <img 
+          src={imageUrl} 
+          alt={imageAlt}
+          class="rounded-lg shadow-lg w-full h-[400px] object-cover"
+        />
+      </div>
+      <div class="w-full md:w-1/2">
+        <h2 class="text-3xl font-bold mb-6">{title}</h2>
+        <p class="text-lg text-gray-600 leading-relaxed">{description}</p>
+      </div>
+    </div>
+  </div>
+</section>
